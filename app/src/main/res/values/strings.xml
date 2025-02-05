@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ShakSpotify</string>
+    <string name="this_is_the_splash_image">this is the splash image</string>
+    <string name="splash_text">ShakSpotify</string>
+</resources>
