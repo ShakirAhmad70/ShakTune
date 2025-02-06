@@ -2,6 +2,7 @@ package com.shakspotify.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -25,6 +26,9 @@ public class SplashActivity extends AppCompatActivity {
     ImageView splash_image;
     TextView splash_text;
 
+    SharedPreferences loginPreference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,8 @@ public class SplashActivity extends AppCompatActivity {
         splash_image = findViewById(R.id.splash_image);
         splash_text = findViewById(R.id.splash_text);
 
+        loginPreference = getSharedPreferences("login", MODE_PRIVATE);
+
         Animation fadeInAnim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         Animation transAboveAnim = AnimationUtils.loadAnimation(this, R.anim.translate_above);
         Animation scaleDownAnim = AnimationUtils.loadAnimation(this, R.anim.scale_down);
@@ -52,7 +58,6 @@ public class SplashActivity extends AppCompatActivity {
         splash_image.startAnimation(animationSetForSplashImg);
         animationSetForSplashImg.setFillAfter(true);
 
-
         new Handler().postDelayed(() -> {
             splash_text.setVisibility(View.VISIBLE);
 //            splash_text.setText(HtmlCompat.fromHtml("<u>" + getString(R.string.splash_text) + "</u>", HtmlCompat.FROM_HTML_MODE_LEGACY));
@@ -60,11 +65,20 @@ public class SplashActivity extends AppCompatActivity {
         }, 1000);
 
 
-        new Handler().postDelayed(() -> {
+        new Handler().postDelayed(this::checkLoginStatus, 3000);
+
+
+    }
+
+    private void checkLoginStatus() {
+        if (loginPreference.getBoolean("isLogin", false)) {
             Intent intent = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
-        }, 3000);
-
+        } else {
+            Intent intent = new Intent(SplashActivity.this, AskLogin.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }

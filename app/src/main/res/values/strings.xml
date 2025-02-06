@@ -2,4 +2,20 @@
     <string name="app_name">ShakSpotify</string>
     <string name="this_is_the_splash_image">this is the splash image</string>
     <string name="splash_text">ShakSpotify</string>
+    <string name="white_logo">white logo</string>
+    <string name="ask_login_txt">Millions of songs.\nFree on ShakSpotify</string>
+    <string name="sign_up_txt">Sign up to start\nlistening</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up free</string>
+    <string name="google_logo">Google Logo</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_phone_no">Continue with  Phone No</string>
+    <string name="continue_with_gmail">Continue with Gmail</string>
+    <string name="continue_with_fb">Continue with Facebook</string>
+    <string name="img_description">This is an image</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login_txt">Log in to\nShakSpotify</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="log_in_underlined"><u>Log in</u></string>
+    <string name="sign_up_underlined"><u>Sign up</u></string>
 </resources>

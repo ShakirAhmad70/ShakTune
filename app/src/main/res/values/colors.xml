@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_color">#000000</color>
+    <color name="spotify_green">#12C54B</color>
 </resources>
