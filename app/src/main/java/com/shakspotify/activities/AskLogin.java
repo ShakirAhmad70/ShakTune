@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
@@ -12,6 +13,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.shakspotify.R;
+import com.shakspotify.ThankYouActivity;
 
 public class AskLogin extends AppCompatActivity {
 
@@ -29,6 +31,8 @@ public class AskLogin extends AppCompatActivity {
             return insets;
         });
 
+        overridePendingTransition(R.anim.slide_in_right_for_activity, R.anim.slide_out_left_for_activity);
+
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtn);
 
@@ -40,16 +44,26 @@ public class AskLogin extends AppCompatActivity {
             finish();
         }
 
-
         signUpBtn.setOnClickListener((v) -> {
             Intent intent = new Intent(AskLogin.this, SignUpActivity.class);
             startActivity(intent);
+            finish();
         });
 
         loginBtn.setOnClickListener((v) -> {
             Intent intent = new Intent(AskLogin.this, LoginActivity.class);
             startActivity(intent);
+            finish();
         });
 
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Intent intent = new Intent(AskLogin.this, ThankYouActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_out_left_for_activity, R.anim.slide_in_right_for_activity);
+                finish();
+            }
+        });
     }
 }

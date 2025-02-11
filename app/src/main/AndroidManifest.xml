@@ -15,6 +15,15 @@
         android:theme="@style/Theme.ShakSpotify"
         tools:targetApi="31">
         <activity
+            android:name=".ThankYouActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PhoneSignUpAndLogin"
+            android:exported="false" />
+        <activity
+            android:name=".activities.EmailSignUpAndLogin"
+            android:exported="false" />
+        <activity
             android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
@@ -22,8 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.AskLogin"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true">
