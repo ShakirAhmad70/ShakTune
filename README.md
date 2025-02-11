@@ -1,4 +1,4 @@
-*Spotify Clone Android App*
+Spotify Clone Android App
 Overview
 This repository contains a full-stack Android application that serves as a Spotify clone. The app replicates key features of Spotify—including user authentication, music streaming, playlist management, and a modern, animated UI—to deliver an immersive and responsive music experience.
 
