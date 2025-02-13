@@ -1,4 +1,4 @@
-package com.shakspotify;
+package com.shakspotify.activities;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.shakspotify.R;
 
 public class ThankYouActivity extends AppCompatActivity {
 
@@ -24,6 +26,6 @@ public class ThankYouActivity extends AppCompatActivity {
 
         overridePendingTransition(R.anim.slide_in_right_for_activity, R.anim.slide_out_left_for_activity);
 
-        new Handler().postDelayed(this::finish,500);
+        new Handler().postDelayed(this::finish,300);
     }
 }

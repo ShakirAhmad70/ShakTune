@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
-import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -17,8 +16,6 @@ import com.shakspotify.R;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    LinearLayout withGoogle, withPhoneNo, withGmail, withFacebook;
-    TextView goBackToLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +30,20 @@ public class SignUpActivity extends AppCompatActivity {
 
         overridePendingTransition(R.anim.slide_in_right_for_activity, R.anim.slide_out_left_for_activity);
 
-        withGoogle = findViewById(R.id.withGoogle);
-        withPhoneNo = findViewById(R.id.withPhoneNo);
-        withGmail = findViewById(R.id.withGmail);
-        withFacebook = findViewById(R.id.withFacebook);
-        goBackToLogin = findViewById(R.id.goBackToLogin);
+        LinearLayout withGoogle = findViewById(R.id.withGoogle);
+        LinearLayout withPhoneNo = findViewById(R.id.withPhoneNo);
+        LinearLayout withGmail = findViewById(R.id.withGmail);
+        LinearLayout withFacebook = findViewById(R.id.withFacebook);
+        TextView goBackToLogin = findViewById(R.id.goBackToLogin);
 
         withGmail.setOnClickListener((v) -> {
             Intent intent = new Intent(SignUpActivity.this, EmailSignUpAndLogin.class);
+            intent.putExtra("comeFrom", "signUp");
+            startActivity(intent);
+        });
+
+        withPhoneNo.setOnClickListener(v -> {
+            Intent intent = new Intent(SignUpActivity.this, PhoneSignUpAndLogin.class);
             startActivity(intent);
         });
 
@@ -59,8 +62,5 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
-
 }

@@ -53,7 +53,7 @@ public class SplashActivity extends AppCompatActivity {
             startActivity(checkLoginIntent);
             finish();
 
-        }, 3000);
+        }, 2500);
 
         Animation fadeInAnim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         Animation transAboveAnim = AnimationUtils.loadAnimation(this, R.anim.translate_above);

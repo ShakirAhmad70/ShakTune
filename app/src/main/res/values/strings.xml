@@ -18,6 +18,17 @@
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="log_in_underlined"><u>Log in</u></string>
     <string name="sign_up_underlined"><u>Sign up</u></string>
-    <string name="what_s_your_email">What\'s your email?</string>
+    <string name="dummy_text">This is Dummy Text</string>
     <string name="thank_you_txt">Thank you,\nHope you enjoyed.\n</string>
+    <string name="next">Next</string>
+    <string name="login_without_password">login without password</string>
+    <string name="your_password_goes_here">Your password goes here</string>
+    <string name="you_ll_need_to_confirm_this_email_later">You\'ll need to confirm this email later</string>
+    <string name="what_s_your_email">What\'s your email?</string>
+    <string name="email_or_username">Email or Username</string>
+    <string name="password">Password</string>
+    <string name="we_ll_send_you_a_code">We\'ll send you a code to confirm your phone no</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="we_may_occasionally_send">We may occasionally send you service-based messages.</string>
+    <string name="your_phone_no_goes_here">Your phone no goes here…</string>
 </resources>

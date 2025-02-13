@@ -13,12 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.shakspotify.R;
-import com.shakspotify.ThankYouActivity;
 
 public class AskLogin extends AppCompatActivity {
-
-    SharedPreferences loginPreference;
-    AppCompatButton loginBtn, signUpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +29,10 @@ public class AskLogin extends AppCompatActivity {
 
         overridePendingTransition(R.anim.slide_in_right_for_activity, R.anim.slide_out_left_for_activity);
 
-        loginBtn = findViewById(R.id.loginBtn);
-        signUpBtn = findViewById(R.id.signUpBtn);
+        AppCompatButton loginBtn = findViewById(R.id.loginBtn);
+        AppCompatButton signUpBtn = findViewById(R.id.signUpBtn);
 
-        loginPreference = getSharedPreferences("login", MODE_PRIVATE);
+        SharedPreferences loginPreference = getSharedPreferences("login", MODE_PRIVATE);
 
         if (loginPreference.getBoolean("isLogin", false)) {
             Intent intent = new Intent(AskLogin.this, MainActivity.class);

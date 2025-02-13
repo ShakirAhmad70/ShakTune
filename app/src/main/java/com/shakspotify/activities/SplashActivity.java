@@ -23,10 +23,9 @@ import com.shakspotify.R;
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
-    ImageView splash_image;
-    TextView splash_text;
+    private TextView splash_text;
 
-    SharedPreferences loginPreference;
+    private SharedPreferences loginPreference;
 
 
     @Override
@@ -40,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
-        splash_image = findViewById(R.id.splash_image);
+        ImageView splash_image = findViewById(R.id.splash_image);
         splash_text = findViewById(R.id.splash_text);
 
         loginPreference = getSharedPreferences("loginPref", MODE_PRIVATE);

@@ -1,10 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/secondaryBlack"
     tools:context=".activities.PhoneSignUpAndLogin">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/askPhoneTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:text="@string/enter_phone_number"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            app:ccp_showNameCode="false"
+            android:gravity="center"
+            android:background="@drawable/rounded_gray_bg"
+            android:layout_marginTop="10dp"
+            app:ccp_defaultNameCode="IN"
+            app:ccp_showFullName="true"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            app:ccp_contentColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/askPhoneTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/askPhoneEdt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@color/secondaryBlack"
+            android:paddingStart="12dp"
+            android:textSize="14sp"
+            android:paddingEnd="12dp"
+            android:hint="@string/your_phone_no_goes_here"
+            android:background="@drawable/rounded_gray_bg"
+            app:layout_constraintTop_toBottomOf="@+id/ccp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sendCodeTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:text="@string/we_ll_send_you_a_code"
+            app:layout_constraintTop_toBottomOf="@id/askPhoneEdt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sendMsgTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:text="@string/we_may_occasionally_send"
+            app:layout_constraintTop_toBottomOf="@id/sendCodeTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextBtn"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/next"
+            android:textSize="16sp"
+            android:background="@drawable/rounded_green_bg"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            app:layout_constraintTop_toBottomOf="@+id/sendMsgTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
