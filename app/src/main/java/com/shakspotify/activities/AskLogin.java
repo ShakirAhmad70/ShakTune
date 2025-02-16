@@ -1,7 +1,6 @@
 package com.shakspotify.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -32,13 +31,6 @@ public class AskLogin extends AppCompatActivity {
         AppCompatButton loginBtn = findViewById(R.id.loginBtn);
         AppCompatButton signUpBtn = findViewById(R.id.signUpBtn);
 
-        SharedPreferences loginPreference = getSharedPreferences("login", MODE_PRIVATE);
-
-        if (loginPreference.getBoolean("isLogin", false)) {
-            Intent intent = new Intent(AskLogin.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
 
         signUpBtn.setOnClickListener((v) -> {
             Intent intent = new Intent(AskLogin.this, SignUpActivity.class);

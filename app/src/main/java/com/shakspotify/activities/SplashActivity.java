@@ -24,9 +24,7 @@ import com.shakspotify.R;
 public class SplashActivity extends AppCompatActivity {
 
     private TextView splash_text;
-
     private SharedPreferences loginPreference;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +40,10 @@ public class SplashActivity extends AppCompatActivity {
         ImageView splash_image = findViewById(R.id.splash_image);
         splash_text = findViewById(R.id.splash_text);
 
-        loginPreference = getSharedPreferences("loginPref", MODE_PRIVATE);
+        loginPreference = getSharedPreferences(String.valueOf(R.string.LOGIN_PREF), MODE_PRIVATE);
+
         new Handler().postDelayed(() ->{
-            boolean isLogin = loginPreference.getBoolean("loginStatus", false);
+            boolean isLogin = loginPreference.getBoolean(String.valueOf(R.string.CHECK_LOGIN), false);
             Intent checkLoginIntent;
             if(isLogin)  checkLoginIntent = new Intent(SplashActivity.this, MainActivity.class);
             else         checkLoginIntent = new Intent(SplashActivity.this, AskLogin.class);

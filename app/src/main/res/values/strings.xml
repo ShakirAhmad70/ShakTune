@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ShakSpotify</string>
+    <string name="LOGIN_PREF">login</string>
+    <string name="CHECK_LOGIN">isLogin</string>
     <string name="this_is_the_splash_image">this is the splash image</string>
     <string name="splash_text">ShakSpotify</string>
     <string name="white_logo">white logo</string>

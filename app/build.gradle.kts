@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.googleAuth)
     implementation(libs.hbb20)
     implementation(libs.gson)
     implementation(libs.appcompat)

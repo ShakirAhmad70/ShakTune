@@ -2,20 +2,31 @@ package com.shakspotify.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.shakspotify.R;
+
 
 public class SignUpActivity extends AppCompatActivity {
 
+    private static final int GOOGLE_LOGIN_REQ_CODE = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,21 +41,36 @@ public class SignUpActivity extends AppCompatActivity {
 
         overridePendingTransition(R.anim.slide_in_right_for_activity, R.anim.slide_out_left_for_activity);
 
-        LinearLayout withGoogle = findViewById(R.id.withGoogle);
-        LinearLayout withPhoneNo = findViewById(R.id.withPhoneNo);
-        LinearLayout withGmail = findViewById(R.id.withGmail);
-        LinearLayout withFacebook = findViewById(R.id.withFacebook);
+        LinearLayout signUpWithGoogle = findViewById(R.id.signUpWithGoogle);
+        LinearLayout signUpWithPhoneNo = findViewById(R.id.signUpWithPhoneNo);
+        LinearLayout signUpWithGmail = findViewById(R.id.signUpWithGmail);
+        LinearLayout signUpWithFacebook = findViewById(R.id.signUpWithFacebook);
         TextView goBackToLogin = findViewById(R.id.goBackToLogin);
 
-        withGmail.setOnClickListener((v) -> {
+        signUpWithGmail.setOnClickListener(v -> {
             Intent intent = new Intent(SignUpActivity.this, EmailSignUpAndLogin.class);
             intent.putExtra("comeFrom", "signUp");
             startActivity(intent);
         });
 
-        withPhoneNo.setOnClickListener(v -> {
+        signUpWithPhoneNo.setOnClickListener(v -> {
             Intent intent = new Intent(SignUpActivity.this, PhoneSignUpAndLogin.class);
             startActivity(intent);
+        });
+
+        GoogleSignInOptions gsop = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        GoogleSignInClient gsc = GoogleSignIn.getClient(this, gsop);
+
+        signUpWithGoogle.setOnClickListener(v -> {
+            Intent signInIntent = gsc.getSignInIntent();
+            startActivityForResult(signInIntent, GOOGLE_LOGIN_REQ_CODE);
+        });
+
+        signUpWithFacebook.setOnClickListener(v -> {
+            Toast.makeText(this, "Facebook Login working", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
         });
 
         goBackToLogin.setOnClickListener((v) -> {
@@ -62,5 +88,26 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GOOGLE_LOGIN_REQ_CODE) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                if (account != null) {
+                    startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(this, "Google sign in failed, account not found", Toast.LENGTH_SHORT).show();
+                }
+            } catch (ApiException e) {
+                Log.e("LoginActivity", "Google sign in failed " + e.getStatus(), e);
+            }
+        }
     }
 }

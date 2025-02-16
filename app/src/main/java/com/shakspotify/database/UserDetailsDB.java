@@ -1,4 +1,4 @@
-package com.shakspotify.database.helper;
+package com.shakspotify.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,7 +13,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
 
-public class UserDetails extends SQLiteOpenHelper {
+public class UserDetailsDB extends SQLiteOpenHelper {
     private static final String DETAILS_DB = "user_details_db";
     private static final int version = 1;
     private static final String USER_DETAILS_TABLE = "user_details_table";
@@ -21,7 +21,7 @@ public class UserDetails extends SQLiteOpenHelper {
     private static final String USER_FOLLOWERS_LIST_TABLE = "user_followers_list_table";
     private final Context context;
 
-    public UserDetails(Context context) {
+    public UserDetailsDB(Context context) {
         super(context, DETAILS_DB, null, version);
         this.context = context;
     }

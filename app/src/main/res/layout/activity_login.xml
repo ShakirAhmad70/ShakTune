@@ -26,7 +26,7 @@
             app:srcCompat="@drawable/logo_white" />
 
         <TextView
-            android:id="@+id/signUpTxt"
+            android:id="@+id/loginTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_txt"
@@ -41,7 +41,7 @@
             />
 
         <LinearLayout
-            android:id="@+id/withGmail"
+            android:id="@+id/loginWithGmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
@@ -53,26 +53,26 @@
             android:weightSum="10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/signUpTxt">
+            app:layout_constraintTop_toBottomOf="@+id/loginTxt">
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="24dp"
                 android:src="@drawable/icon_gmail"
                 android:layout_weight="3"
-                android:contentDescription="@string/google_logo" />
+                android:contentDescription="@string/img_description" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:text="@string/continue_with_google"
+                android:text="@string/continue_with_gmail"
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/withPhoneNo"
+            android:id="@+id/loginWithPhoneNo"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
@@ -84,7 +84,7 @@
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/withGmail">
+            app:layout_constraintTop_toBottomOf="@id/loginWithGmail">
 
             <ImageView
                 android:layout_width="0dp"
@@ -103,7 +103,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/withGoogle"
+            android:id="@+id/loginWithGoogle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
@@ -115,7 +115,7 @@
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/withPhoneNo">
+            app:layout_constraintTop_toBottomOf="@id/loginWithPhoneNo">
 
             <ImageView
                 android:layout_width="0dp"
@@ -134,7 +134,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/withFacebook"
+            android:id="@+id/loginWithFacebook"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
@@ -146,7 +146,7 @@
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/withGoogle">
+            app:layout_constraintTop_toBottomOf="@id/loginWithGoogle">
 
             <ImageView
                 android:layout_width="0dp"
@@ -174,7 +174,7 @@
             android:layout_marginTop="45dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/withFacebook"
+            app:layout_constraintTop_toBottomOf="@id/loginWithFacebook"
             />
 
         <TextView
