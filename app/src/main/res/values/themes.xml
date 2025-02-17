@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.ShakSpotify" parent="Base.Theme.ShakSpotify" />
+
 </resources>

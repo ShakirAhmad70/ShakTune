@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondaryBgColor"
+    tools:context=".activities.SelectUserNameActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:paddingBottom="10dp"
+        >
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/askUserNameTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_color"
+            android:text="@string/what_s_your_name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/askUserNameEdt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="text|textPersonName"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/spotify_green"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:background="@drawable/rounded_gray_bg"
+            app:layout_constraintTop_toBottomOf="@+id/askUserNameTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appearsTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:text="@string/this_appears_on_your_shakspotify_profile"
+            app:layout_constraintTop_toBottomOf="@id/askUserNameEdt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <View
+            android:id="@+id/horizontalLine"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/text_color"
+            app:layout_constraintTop_toBottomOf="@id/appearsTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/byTappingTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/text_color"
+            android:text="@string/by_tapping"
+            app:layout_constraintTop_toBottomOf="@id/horizontalLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/termsTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/spotify_green"
+            android:text="@string/terms_of_use"
+            app:layout_constraintTop_toBottomOf="@id/byTappingTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/learnMoreTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/text_color"
+            android:text="@string/learn_more"
+            app:layout_constraintTop_toBottomOf="@id/termsTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/privacyTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/spotify_green"
+            android:text="@string/privacy_policy"
+            app:layout_constraintTop_toBottomOf="@id/learnMoreTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <CheckBox
+            android:id="@+id/marketingMsgCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:text="@string/marketingMsgTxt"
+            android:background="@drawable/checkbox_no_ripple"
+            android:button="@null"
+            android:layout_marginEnd="4dp"
+            android:drawableEnd="@drawable/checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/privacyTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <CheckBox
+            android:id="@+id/shareDataTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:textSize="12sp"
+            android:textColor="@color/text_color"
+            android:text="@string/share_data"
+            android:background="@drawable/checkbox_no_ripple"
+            android:button="@null"
+            android:layout_marginEnd="4dp"
+            android:drawableEnd="@drawable/checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/marketingMsgCheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createAccBtn"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
+            android:text="@string/create_account"
+            android:textSize="16sp"
+            android:background="@drawable/rounded_green_bg"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@id/shareDataTxt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

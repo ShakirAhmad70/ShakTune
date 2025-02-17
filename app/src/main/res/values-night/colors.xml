@@ -6,4 +6,7 @@
     <color name="spotify_green">#12C54B</color>
     <color name="secondaryBlack">#1B1B1B</color>
     <color name="gray">#424242</color>
+    <color name="warningRed">#FF0000</color>
+    <color name="secondaryBgColor">#1B1B1B</color>
+    <color name="secondaryTextColor">#DEDEDE</color>
 </resources>

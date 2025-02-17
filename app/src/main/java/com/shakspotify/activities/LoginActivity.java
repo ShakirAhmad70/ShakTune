@@ -10,12 +10,18 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -24,10 +30,13 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.shakspotify.R;
 
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
 
 
     private static final int GOOGLE_LOGIN_REQ_CODE = 1000;
+    private CallbackManager fbCallbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +69,8 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+        //**********Google Sign In**********
         GoogleSignInOptions gsop = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -69,6 +80,35 @@ public class LoginActivity extends AppCompatActivity {
         loginWithGoogle.setOnClickListener(v -> {
             Intent signInIntent = gsc.getSignInIntent();
             startActivityForResult(signInIntent, GOOGLE_LOGIN_REQ_CODE);
+        });
+
+
+        //**********Facebook Sign In**********
+        fbCallbackManager = CallbackManager.Factory.create();
+
+        LoginManager.getInstance().registerCallback(fbCallbackManager,
+                new FacebookCallback<>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        //Handle cancel
+                        Toast.makeText(LoginActivity.this, "Login canceled", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(@NonNull FacebookException e) {
+                        //Handle error
+                        Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        loginWithFacebook.setOnClickListener(v -> {
+            LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, List.of("public_profile"));
         });
 
 
@@ -93,6 +133,8 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        //Google sign in handling
         if (requestCode == GOOGLE_LOGIN_REQ_CODE) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
@@ -107,5 +149,9 @@ public class LoginActivity extends AppCompatActivity {
                 Log.e("LoginActivity", "Google sign in failed " + e.getStatus(), e);
             }
         }
+
+
+        //Facebook sign in handling
+        fbCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }

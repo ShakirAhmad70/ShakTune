@@ -32,6 +32,8 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.fbSdk)
     implementation(libs.googleAuth)
     implementation(libs.hbb20)
     implementation(libs.gson)

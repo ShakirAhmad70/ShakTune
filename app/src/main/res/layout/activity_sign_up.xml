@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondaryBlack"
+    android:background="@color/secondaryBgColor"
     tools:context=".activities.SignUpActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,11 +19,12 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginTop="120dp"
+            android:background="@drawable/rounded_bg"
             android:contentDescription="@string/white_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_white" />
+            app:srcCompat="@drawable/small_logo" />
 
         <TextView
             android:id="@+id/signUpTxt"
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             android:text="@string/sign_up_txt"
             android:layout_marginTop="20dp"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color"
             android:textAlignment="center"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -66,8 +67,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:text="@string/continue_with_gmail"
-                android:textColor="@android:color/white"
+                android:text="@string/continue_with_email"
+                android:textColor="@color/text_color"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -98,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:text="@string/continue_with_phone_no"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_color"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -129,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:text="@string/continue_with_google"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_color"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -160,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
                 android:text="@string/continue_with_fb"
-                android:textColor="@android:color/white"
+                android:textColor="@color/text_color"
                 android:textSize="14sp" />
         </LinearLayout>
 

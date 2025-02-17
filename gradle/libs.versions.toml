@@ -10,7 +10,7 @@ constraintlayout = "2.2.0"
 gson = "2.10.1"
 hbb20 = "2.7.3"
 googleAuth = "21.3.0"
-
+fbSdk = "18.0.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -23,6 +23,8 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 hbb20 = { group = "com.hbb20", name = "ccp", version.ref = "hbb20" }
 googleAuth = { group = "com.google.android.gms", name = "play-services-auth", version.ref ="googleAuth" }
+fbSdk = { group = "com.facebook.android", name = "facebook-android-sdk", version.ref = "fbSdk" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
