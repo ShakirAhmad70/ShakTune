@@ -40,10 +40,10 @@ public class SplashActivity extends AppCompatActivity {
         ImageView splash_image = findViewById(R.id.splash_image);
         splash_text = findViewById(R.id.splash_text);
 
-        loginPreference = getSharedPreferences(String.valueOf(R.string.LOGIN_PREF), MODE_PRIVATE);
+        loginPreference = getSharedPreferences(getString(R.string.LOGIN_PREF), MODE_PRIVATE);
 
         new Handler().postDelayed(() ->{
-            boolean isLogin = loginPreference.getBoolean(String.valueOf(R.string.CHECK_LOGIN), false);
+            boolean isLogin = loginPreference.getBoolean(getString(R.string.CHECK_LOGIN), false);
             Intent checkLoginIntent;
             if(isLogin)  checkLoginIntent = new Intent(SplashActivity.this, MainActivity.class);
             else         checkLoginIntent = new Intent(SplashActivity.this, AskLogin.class);

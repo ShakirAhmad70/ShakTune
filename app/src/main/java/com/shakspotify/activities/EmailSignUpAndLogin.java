@@ -113,19 +113,25 @@ public class EmailSignUpAndLogin extends AppCompatActivity {
 
                     nextBtn.setOnClickListener(v1 -> {
                         String password = Objects.requireNonNull(askPasswordTxtInpEdt.getText()).toString().trim();
+
                         if (Validator.isValidPassword(password)) {
                             askPasswordTxt.setText(R.string.confirmYourPassword);
-                            String confirmPassword = askPasswordTxtInpEdt.getText().toString().trim();
                             askPasswordTxtInpEdt.setText("");
-                            while (!password.equals(confirmPassword)) {
-                                Toast.makeText(this, "Entered Passwords don't match, please try again!", Toast.LENGTH_SHORT).show();
-                                askPasswordTxtInpEdt.setText("");
-                            }
 
+                            nextBtn.setOnClickListener(v2 -> {
+                                String confirmPassword = askPasswordTxtInpEdt.getText().toString().trim();
+
+                                if (password.equals(confirmPassword)) {
+                                    Intent gotoSolveCaptchaActivity = new Intent(EmailSignUpAndLogin.this, SolveCaptchaActivity.class);
+                                    startActivity(gotoSolveCaptchaActivity);
+                                } else {
+                                    Toast.makeText(this, "Entered Passwords don't match, please try again!", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                        } else {
+                            Toast.makeText(this, "Password does not meet requirements!", Toast.LENGTH_SHORT).show();
                         }
                     });
-
-
                 }
             });
 

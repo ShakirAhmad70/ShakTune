@@ -1,4 +1,4 @@
-package com.shakspotify.database;
+package com.shakspotify.databases;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -19,6 +19,7 @@ public class UserDetailsDB extends SQLiteOpenHelper {
     private static final String USER_DETAILS_TABLE = "user_details_table";
     private static final String USER_FOLLOWING_LIST_TABLE = "user_following_list_table";
     private static final String USER_FOLLOWERS_LIST_TABLE = "user_followers_list_table";
+    private static final String USER_DOB_TABLE = "user_dob_table";
     private final Context context;
 
     public UserDetailsDB(Context context) {
@@ -56,6 +57,17 @@ public class UserDetailsDB extends SQLiteOpenHelper {
                         "userName TEXT NOT NULL," +
                         "followerUserName TEXT NOT NULL,"+
                         "PRIMARY KEY (userName, followerUserName)," +
+                        "FOREIGN KEY (userName) REFERENCES user_details_table(userName)" +
+                        ")"
+        );
+
+        db.execSQL(
+                "CREATE TABLE IF NOT EXISTS " + USER_DOB_TABLE + " (" +
+                        "userName TEXT NOT NULL," +
+                        "year INTEGER NOT NULL," +
+                        "month INTEGER NOT NULL," +
+                        "day INTEGER NOT NULL," +
+                        "PRIMARY KEY (userName, year, month, day)," +
                         "FOREIGN KEY (userName) REFERENCES user_details_table(userName)" +
                         ")"
         );
@@ -164,6 +176,37 @@ public class UserDetailsDB extends SQLiteOpenHelper {
         values.put("followerList", listToJson(followerList));
         db.update(USER_DETAILS_TABLE, values, "userName = ?", new String[]{userName});
         db.close();
+    }
+
+    public void insertDOB(int day, int month, int year) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("year", year);
+        values.put("month", month);
+        values.put("day", day);
+        db.insert(USER_DOB_TABLE, null, values);
+        db.close();
+    }
+
+    public void updateDOB(String userName, int day, int month, int year) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("year", year);
+        values.put("month", month);
+        values.put("day", day);
+        db.update(USER_DOB_TABLE, values, "userName = ?", new String[]{userName});
+        db.close();
+    }
+
+    public void deleteDOB(String userName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(USER_DOB_TABLE, "userName = ?", new String[]{userName});
+        db.close();
+    }
+
+    public Cursor getDOB(String userName) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + USER_DOB_TABLE + " WHERE userName = ?", new String[]{userName});
     }
 
     public void deleteUserData(String userName) {

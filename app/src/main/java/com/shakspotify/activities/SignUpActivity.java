@@ -84,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
         fbCallbackManager = CallbackManager.Factory.create();
 
         LoginManager.getInstance().registerCallback(fbCallbackManager,
-                new FacebookCallback<LoginResult>() {
+                new FacebookCallback<>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         startActivity(new Intent(SignUpActivity.this, MainActivity.class));

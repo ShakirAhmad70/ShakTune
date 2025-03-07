@@ -32,7 +32,8 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.glide)
+    implementation(libs.safetynet)
     implementation(libs.fbSdk)
     implementation(libs.googleAuth)
     implementation(libs.hbb20)

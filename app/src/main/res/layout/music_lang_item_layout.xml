@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/musicLangCard"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/musicLangClay"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        >
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/musicLangNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            android:text="@string/hindi"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/musicLangCheckbox"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintVertical_bias="0.05"
+            />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/musicLangArtistImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/hindi_artist"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/musicLangNameTxt"
+            app:layout_constraintEnd_toStartOf="@id/musicLangCheckbox"
+            app:layout_constraintTop_toBottomOf="@id/musicLangCheckbox"
+            app:layout_constraintVertical_bias="1.0"
+            />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/musicLangCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:button="@null"
+            android:checked="false"
+            android:background="@drawable/checkbox_no_ripple"
+            android:drawableEnd="@drawable/icon_checked_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

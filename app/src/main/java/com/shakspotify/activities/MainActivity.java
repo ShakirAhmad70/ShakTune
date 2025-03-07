@@ -23,7 +23,6 @@ import com.shakspotify.R;
 
 import org.json.JSONException;
 
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,9 +38,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         TextView tv = findViewById(R.id.tv);
-        SharedPreferences loginPref = getSharedPreferences(String.valueOf(R.string.LOGIN_PREF), MODE_PRIVATE);
+        SharedPreferences loginPref = getSharedPreferences(getString(R.string.LOGIN_PREF), MODE_PRIVATE);
         SharedPreferences.Editor editor = loginPref.edit();
-        editor.putBoolean(String.valueOf(R.string.CHECK_LOGIN), true);
+        editor.putBoolean(getString(R.string.CHECK_LOGIN), true);
         editor.apply();
 
         //clear tv before login

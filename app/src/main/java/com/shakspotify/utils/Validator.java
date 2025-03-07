@@ -19,7 +19,7 @@ public class Validator {
     // - Minimum 8 characters in length .{8,}
     public static boolean isValidPassword(String password) {
         if (password == null) return false;
-        String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=!]).{8,}$";
+        String passwordPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@.#$%^~&+=!]).{8,}$";
         Pattern pattern = Pattern.compile(passwordPattern);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();

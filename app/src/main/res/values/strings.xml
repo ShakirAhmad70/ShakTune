@@ -6,6 +6,7 @@
     <string name="fbAppSecret">d7e683b1821675a2b4922fff87ce6bfb</string>
     <string name="fb_login_protocol_scheme">fb612501631500749</string>
     <string name="facebook_client_token">8ef3db46a7c84921b19c37763ab14875</string>
+    <string name="RECAPTCHA_SITE_KEY">6LeY5eAqAAAAAAo7G8JD-mLzkEPhZD8KvY14cv0k</string>
     <string name="this_is_the_splash_image">this is the splash image</string>
     <string name="splash_text">ShakSpotify</string>
     <string name="white_logo">white logo</string>
@@ -51,8 +52,14 @@
     <string name="by_tapping">By tapping \"Create Account\", you agree to the ShakSpotify Terms of Use.</string>
     <string name="terms_of_use">Terms of Use</string>
     <string name="learn_more">To learn more about how ShakSpotify collects, uses, shares and protects your personal data, please see the ShakSpotify Privacy Policy.</string>
-    <string name="marketingMsgTxt">I would prefer not to recieve marketing messages from ShakSpotify.</string>
+    <string name="marketingMsgTxt">I would prefer not to receive marketing messages from ShakSpotify.</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="share_data">Share my registration data with ShakSpotify\'s content providers for marketing purpose.</string>
     <string name="create_account">Create account</string>
+    <string name="human_txt">We need to make sure that you\'re a human</string>
+    <string name="i_m_not_a_robot">I\'m not a robot</string>
+    <string name="continue_str">Continue</string>
+    <string name="what_music_do_you_like">What music do you like?</string>
+    <string name="choose_3_or_more_artists_you_like">Choose 3 or more artists you like</string>
+    <string name="hindi">Hindi</string>
 </resources>
