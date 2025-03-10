@@ -51,6 +51,7 @@
                 android:orientation="horizontal"
                 android:gravity="start">
 
+
                 <RadioButton
                     android:id="@+id/femaleRB"
                     android:layout_width="wrap_content"
@@ -59,9 +60,11 @@
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:button="@null"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:textColor="@color/text_color"
                     android:textSize="16sp"
-                    android:background="@drawable/radio_btn_stroke_bg"
+                    android:background="@drawable/radio_btn_stroke_transparent_bg"
                     android:gravity="center"
                     android:layout_margin="4dp" />
 
@@ -73,9 +76,11 @@
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:button="@null"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:textColor="@color/text_color"
                     android:textSize="16sp"
-                    android:background="@drawable/radio_btn_stroke_bg"
+                    android:background="@drawable/radio_btn_stroke_transparent_bg"
                     android:gravity="center"
                     android:layout_margin="4dp" />
 
@@ -87,14 +92,16 @@
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:button="@null"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:textColor="@color/text_color"
                     android:textSize="16sp"
-                    android:background="@drawable/radio_btn_stroke_bg"
+                    android:background="@drawable/radio_btn_stroke_transparent_bg"
                     android:gravity="center"
                     android:layout_margin="4dp"  />
             </LinearLayout>
 
-            <!-- Second row: 2 radio buttons -->
+<!--        Second row: 2 radio buttons -->
             <LinearLayout
                 android:id="@+id/genderRow2"
                 android:layout_width="wrap_content"
@@ -111,9 +118,11 @@
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:button="@null"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:textColor="@color/text_color"
                     android:textSize="16sp"
-                    android:background="@drawable/radio_btn_stroke_bg"
+                    android:background="@drawable/radio_btn_stroke_transparent_bg"
                     android:gravity="center"
                     android:layout_margin="4dp" />
 
@@ -125,9 +134,11 @@
                     android:paddingStart="16dp"
                     android:paddingEnd="16dp"
                     android:button="@null"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:textColor="@color/text_color"
                     android:textSize="16sp"
-                    android:background="@drawable/radio_btn_stroke_bg"
+                    android:background="@drawable/radio_btn_stroke_transparent_bg"
                     android:gravity="center"
                     android:layout_margin="4dp" />
             </LinearLayout>

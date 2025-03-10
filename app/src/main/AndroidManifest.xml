@@ -18,8 +18,7 @@
 
         <activity
             android:name=".activities.SelectMusicLangActivity"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".activities.SelectArtistsActivity"
             android:exported="false" />
@@ -31,7 +30,12 @@
             android:exported="false" />
         <activity
             android:name=".activities.SelectGenderActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.SelectDobActivity"
             android:exported="false" />

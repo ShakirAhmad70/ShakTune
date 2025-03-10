@@ -33,6 +33,7 @@ public class SelectMusicLangActivity extends AppCompatActivity {
             return insets;
         });
 
+
         RecyclerView musicLangRv = findViewById(R.id.musicLangRv);
         AppCompatButton nextBtn = findViewById(R.id.nextBtn);
 
@@ -53,11 +54,13 @@ public class SelectMusicLangActivity extends AppCompatActivity {
 
 
         //setup the adapter
-        musicLangRv.setAdapter(new MusicLangAdapter(musicLangItemsList, this));
+        MusicLangAdapter adapter = new MusicLangAdapter(musicLangItemsList, this);
+        musicLangRv.setAdapter(adapter);
+
 
         nextBtn.setOnClickListener(v -> {
-            startActivity(new Intent(SelectMusicLangActivity.this, SelectArtistsActivity.class));
-            finish();
+            Intent intent = new Intent(SelectMusicLangActivity.this, SelectArtistsActivity.class);
+            startActivity(intent);
         });
 
     }

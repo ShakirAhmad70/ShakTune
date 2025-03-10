@@ -56,8 +56,8 @@ public class SolveCaptchaActivity extends AppCompatActivity {
         });
 
         continueBtn.setOnClickListener(v -> {
-            Intent gotoMain = new Intent(SolveCaptchaActivity.this, SelectArtistsActivity.class);
-            startActivity(gotoMain);
+            Intent intent = new Intent(SolveCaptchaActivity.this, SelectMusicLangActivity.class);
+            startActivity(intent);
         });
     }
 }

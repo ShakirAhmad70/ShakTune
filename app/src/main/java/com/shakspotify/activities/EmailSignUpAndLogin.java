@@ -122,7 +122,7 @@ public class EmailSignUpAndLogin extends AppCompatActivity {
                                 String confirmPassword = askPasswordTxtInpEdt.getText().toString().trim();
 
                                 if (password.equals(confirmPassword)) {
-                                    Intent gotoSolveCaptchaActivity = new Intent(EmailSignUpAndLogin.this, SolveCaptchaActivity.class);
+                                    Intent gotoSolveCaptchaActivity = new Intent(EmailSignUpAndLogin.this, SelectDobActivity.class);
                                     startActivity(gotoSolveCaptchaActivity);
                                 } else {
                                     Toast.makeText(this, "Entered Passwords don't match, please try again!", Toast.LENGTH_SHORT).show();
@@ -159,7 +159,6 @@ public class EmailSignUpAndLogin extends AppCompatActivity {
 
             askEmailEdt.addTextChangedListener(inputWatcher.get());
 
-
         } else {
             Log.d("EmailSignUpAndLogin", "onCreate: " + comeFrom);
         }
@@ -191,6 +190,4 @@ public class EmailSignUpAndLogin extends AppCompatActivity {
         // Adjust alpha: 1.0 for enabled, 0.5 for disabled
         nextBtn.setAlpha(valid ? 1.0f : 0.5f);
     }
-
-
 }

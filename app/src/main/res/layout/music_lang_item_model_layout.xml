@@ -45,9 +45,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/musicLangNameTxt"
             app:layout_constraintEnd_toStartOf="@id/musicLangCheckbox"
-            app:layout_constraintTop_toBottomOf="@id/musicLangCheckbox"
-            app:layout_constraintVertical_bias="1.0"
             />
+
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/musicLangCheckbox"

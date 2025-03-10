@@ -12,7 +12,7 @@ hbb20 = "2.7.3"
 googleAuth = "21.3.0"
 fbSdk = "18.0.2"
 safetynet = "18.1.0"
-
+glide = "4.16.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -27,6 +27,7 @@ hbb20 = { group = "com.hbb20", name = "ccp", version.ref = "hbb20" }
 googleAuth = { group = "com.google.android.gms", name = "play-services-auth", version.ref ="googleAuth" }
 fbSdk = { group = "com.facebook.android", name = "facebook-android-sdk", version.ref = "fbSdk" }
 safetynet = { group = "com.google.android.gms", name = "play-services-safetynet", version.ref = "safetynet" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

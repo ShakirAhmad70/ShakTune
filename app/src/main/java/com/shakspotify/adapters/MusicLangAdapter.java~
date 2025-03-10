@@ -32,7 +32,7 @@ public class MusicLangAdapter extends RecyclerView.Adapter<MusicLangAdapter.Musi
     @NonNull
     @Override
     public MusicLangViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.music_lang_item_model_layout,parent, false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.music_lang_item_layout,parent, false);
         return new MusicLangViewHolder(itemView);
     }
 
