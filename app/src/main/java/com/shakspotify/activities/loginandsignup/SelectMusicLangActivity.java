@@ -1,8 +1,12 @@
-package com.shakspotify.activities;
+package com.shakspotify.activities.loginandsignup;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.shakspotify.R;
 import com.shakspotify.adapters.MusicLangAdapter;
 import com.shakspotify.models.MusicLangItemModel;
@@ -57,10 +62,36 @@ public class SelectMusicLangActivity extends AppCompatActivity {
         MusicLangAdapter adapter = new MusicLangAdapter(musicLangItemsList, this);
         musicLangRv.setAdapter(adapter);
 
+        ArrayList<String> selectedLanguages = new ArrayList<>();
 
         nextBtn.setOnClickListener(v -> {
             Intent intent = new Intent(SelectMusicLangActivity.this, SelectArtistsActivity.class);
-            startActivity(intent);
+
+            //clear the previously selected languages
+            selectedLanguages.clear();
+            int countSelection = 0;
+
+            for (int i = 0; i < musicLangItemsList.size(); i++) {
+                if (musicLangItemsList.get(i).getSelected()) {
+                    selectedLanguages.add(musicLangItemsList.get(i).getLangName());
+                    countSelection++;
+                }
+            }
+
+            if (countSelection == 0) {
+                Toast.makeText(this, "Select at least one language", Toast.LENGTH_SHORT).show();
+                Animation shakeAnimation = AnimationUtils.loadAnimation(SelectMusicLangActivity.this, R.anim.shake);
+
+                for(int i = 0; i < musicLangRv.getChildCount(); i++){
+                    View childItem = musicLangRv.getChildAt(i);
+                    childItem.startAnimation(shakeAnimation);
+                }
+
+
+            } else {
+                intent.putStringArrayListExtra("selectedLanguages", selectedLanguages);
+                startActivity(intent);
+            }
         });
 
     }

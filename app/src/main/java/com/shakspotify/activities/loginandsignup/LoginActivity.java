@@ -1,4 +1,4 @@
-package com.shakspotify.activities;
+package com.shakspotify.activities.loginandsignup;
 
 
 import android.content.Intent;
@@ -29,6 +29,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.shakspotify.R;
+import com.shakspotify.activities.MainActivity;
 
 import java.util.List;
 

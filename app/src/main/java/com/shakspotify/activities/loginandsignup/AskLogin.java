@@ -1,4 +1,4 @@
-package com.shakspotify.activities;
+package com.shakspotify.activities.loginandsignup;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.shakspotify.R;
+import com.shakspotify.activities.splashes.ThankYouActivity;
 
 public class AskLogin extends AppCompatActivity {
 

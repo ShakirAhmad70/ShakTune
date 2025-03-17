@@ -62,4 +62,7 @@
     <string name="what_music_do_you_like">What music do you like?</string>
     <string name="choose_3_or_more_artists_you_like">Choose 3 or more artists you like</string>
     <string name="hindi">Hindi</string>
+    <string name="for_you">For You</string>
+    <string name="search">Search</string>
+    <string name="artist">Artist Name</string>
 </resources>

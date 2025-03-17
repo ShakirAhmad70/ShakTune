@@ -20,9 +20,9 @@ import java.util.List;
 
 public class MusicLangAdapter extends RecyclerView.Adapter<MusicLangAdapter.MusicLangViewHolder> {
 
-
     private final List<MusicLangItemModel> musicLangItemsList;
     private final Context context;
+
 
     public MusicLangAdapter(List<MusicLangItemModel> musicLangItemsList, Context context) {
         this.musicLangItemsList = musicLangItemsList;
@@ -65,11 +65,10 @@ public class MusicLangAdapter extends RecyclerView.Adapter<MusicLangAdapter.Musi
     }
 
     public static class MusicLangViewHolder extends RecyclerView.ViewHolder{
-
-        ConstraintLayout musicLangClay;
-        AppCompatTextView musicLangNameTxt;
-        AppCompatCheckBox musicLangCheckbox;
-        AppCompatImageView musicLangArtistImg;
+        private final ConstraintLayout musicLangClay;
+        private final AppCompatTextView musicLangNameTxt;
+        private final AppCompatCheckBox musicLangCheckbox;
+        private final AppCompatImageView musicLangArtistImg;
 
         public MusicLangViewHolder(@NonNull View itemView) {
             super(itemView);

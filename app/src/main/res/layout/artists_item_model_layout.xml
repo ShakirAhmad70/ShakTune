@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/artistItemRLay"
+    android:layout_width="120dp"
+    android:layout_height="140dp"
+    android:background="@color/secondaryBgColor"
+    >
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/artistCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:button="@null"
+        android:checked="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:drawableEnd="@drawable/checkbox2"
+        android:background="@drawable/checkbox_no_ripple"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/artistImg"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/artist"
+        app:shapeAppearanceOverlay="@style/circularImageView"
+        android:layout_alignParentTop="true"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/artistNameTxt"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/artistImg"
+        android:text="@string/artist"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="14sp"
+        android:maxLines="1"
+        />
+
+</RelativeLayout>

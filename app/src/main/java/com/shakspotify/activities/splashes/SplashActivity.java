@@ -1,4 +1,4 @@
-package com.shakspotify.activities;
+package com.shakspotify.activities.splashes;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -19,6 +19,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.shakspotify.R;
+import com.shakspotify.activities.MainActivity;
+import com.shakspotify.activities.loginandsignup.AskLogin;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {

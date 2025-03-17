@@ -1,5 +1,7 @@
 package com.shakspotify.models;
 
+import java.io.Serializable;
+
 public class MusicLangItemModel {
 
     private final String langName;
@@ -11,7 +13,7 @@ public class MusicLangItemModel {
         this.artistImageId = artistImage;
         this.bgStartColor = bgStartColor;
         this.bgEndColor = bgEndColor;
-        this.isSelected = true;
+        this.isSelected = false;
     }
 
     public String getLangName() {

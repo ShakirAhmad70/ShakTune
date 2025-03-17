@@ -1,4 +1,4 @@
-package com.shakspotify.activities;
+package com.shakspotify.activities.loginandsignup;
 
 import android.os.Bundle;
 

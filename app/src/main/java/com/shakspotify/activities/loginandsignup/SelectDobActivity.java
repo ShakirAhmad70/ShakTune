@@ -1,31 +1,35 @@
-package com.shakspotify.activities;
+package com.shakspotify.activities.loginandsignup;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.shakspotify.R;
 
-public class ThankYouActivity extends AppCompatActivity {
+public class SelectDobActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_thank_you);
+        setContentView(R.layout.activity_select_dob);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        overridePendingTransition(R.anim.slide_in_right_for_activity, R.anim.slide_out_left_for_activity);
+        AppCompatButton nextBtn = findViewById(R.id.nextBtn);
+        nextBtn.setOnClickListener((v) -> {
+            Intent intent = new Intent(SelectDobActivity.this, SelectGenderActivity.class);
+            startActivity(intent);
+        });
 
-        new Handler().postDelayed(this::finish,300);
     }
 }

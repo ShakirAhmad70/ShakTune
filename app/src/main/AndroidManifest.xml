@@ -17,19 +17,7 @@
 
 
         <activity
-            android:name=".activities.SelectMusicLangActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.SelectArtistsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.SolveCaptchaActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".activities.SelectUserNameActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.SelectGenderActivity"
+            android:name=".activities.loginandsignup.SelectMusicLangActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,38 +25,49 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.SelectDobActivity"
+            android:name=".activities.loginandsignup.SelectArtistsActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PhoneSignUpAndLogin"
+            android:name=".activities.loginandsignup.SolveCaptchaActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.loginandsignup.SelectUserNameActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ThankYouActivity"
+            android:name=".activities.loginandsignup.SelectGenderActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.loginandsignup.SelectDobActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.EmailSignUpAndLogin"
+            android:name=".activities.loginandsignup.PhoneSignUpAndLogin"
             android:exported="false" />
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.splashes.ThankYouActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SignUpActivity"
+            android:name=".activities.loginandsignup.EmailSignUpAndLogin"
             android:exported="false" />
         <activity
-            android:name=".activities.AskLogin"
+            android:name=".activities.loginandsignup.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.loginandsignup.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.loginandsignup.AskLogin"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="false"/>
         <activity
-            android:name=".activities.SplashActivity"
-            android:exported="true" >
+            android:name=".activities.splashes.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
 
 
@@ -89,10 +88,8 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
